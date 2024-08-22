@@ -59,11 +59,15 @@ const IPChecker = () => {
           <h2>Adresy IP</h2>
           <p>
             <strong>IPv4:</strong>{" "}
-            {ipData.ipv4 || <span className="loading">Ładowanie...</span>}
+            {<a href={`http://${ipData.ipv4}`}>{ipData.ipv4}</a> || (
+              <span className="loading">Ładowanie...</span>
+            )}
           </p>
           <p>
             <strong>IPv6:</strong>{" "}
-            {ipData.ipv6 || <span className="loading">Ładowanie...</span>}
+            {<a href={`http://[${ipData.ipv6}]`}>{ipData.ipv6}</a> || (
+              <span className="loading">Ładowanie...</span>
+            )}
           </p>
         </div>
         <div className="user-agent-info">
