@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import copy from "copy-to-clipboard";
 import "./IPChecker.scss";
 
 const IPChecker = () => {
@@ -97,17 +98,19 @@ const IPChecker = () => {
         <div className="ip-info">
           <h2>{t("ipAddresses")}</h2>
           <p>
-            <strong>IPv4:</strong>{" "}
+            <strong>IPv4:</strong>
             {ipData.ipv4 ? (
-              <span>{ipData.ipv4}</span>
+              // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
+              <span onClick={() => copy(ipData.ipv4)}>{ipData.ipv4}</span>
             ) : (
               <span className="loading">{t("loading")}</span>
             )}
           </p>
           <p>
-            <strong>IPv6:</strong>{" "}
+            <strong>IPv6:</strong>
             {ipData.ipv6 ? (
-              <span>{ipData.ipv6}</span>
+              // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
+              <span onClick={() => copy(ipData.ipv6)}>{ipData.ipv6}</span>
             ) : (
               <span className="loading">{t("loading")}</span>
             )}
