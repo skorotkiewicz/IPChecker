@@ -1,20 +1,6 @@
 import { useState, useEffect } from "react";
-import { useTranslation, initReactI18next } from "react-i18next";
-import i18n from "i18next";
-import LanguageDetector from "i18next-browser-languagedetector";
-import resources from "./languages";
+import { useTranslation } from "react-i18next";
 import "./IPChecker.scss";
-
-i18n
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    resources,
-    fallbackLng: "en",
-    interpolation: {
-      escapeValue: false,
-    },
-  });
 
 const IPChecker = () => {
   const { t, i18n } = useTranslation();
