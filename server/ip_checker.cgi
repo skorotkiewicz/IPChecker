@@ -3,8 +3,8 @@ import os
 import json
 
 def application(environ, start_response):
-    client_ip = environ.get("REMOTE_ADDR", "Nieznany")
-    user_agent = environ.get("HTTP_USER_AGENT", "Nieznany")
+    client_ip = environ.get("REMOTE_ADDR", "Unknown")
+    user_agent = environ.get("HTTP_USER_AGENT", "Unknown")
 
     response_body = json.dumps({
         "ip": client_ip,
